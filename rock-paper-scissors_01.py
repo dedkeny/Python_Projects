@@ -1,5 +1,5 @@
+#! /usr/bin/python3.11
 
-#! /usr/bin/python
 import random
 
 # Opening reminder of game rules for no reason really...
