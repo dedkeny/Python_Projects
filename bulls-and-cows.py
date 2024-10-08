@@ -3,7 +3,8 @@
 
 import random
 
-secret_Code = list(str(random.randint(1000,10000)))
+secret_Code = list(str(random.randint(1000, 10000)))
+
 
 def get_Num():
     player_input = input(": ")
@@ -19,14 +20,16 @@ def get_Num():
         print("\nYou need to give me your number in digits...")
         get_Num()
 
+
 def get_Bulls(guess):
     bulls = 0
-    for i in range(0,4):
+    for i in range(0, 4):
         guessA = int(guess[i])
         secretA = int(secret_Code[i])
         if secretA == guessA:
             bulls += 1
     return bulls
+
 
 def get_Cows(guess):
     cows = 0
@@ -35,6 +38,7 @@ def get_Cows(guess):
             cows += 1
         n += 1
     return cows
+
 
 def game():
     global secret_Code
@@ -47,16 +51,19 @@ def game():
         else:
             bulls = get_Bulls(guess)
             cows = get_Cows(guess)
-        print("there were:\n\t{0} Bulls\n\t{1} Cows\n\nYou have {2} tries left.\n\n".format(bulls, cows, tries))
+        print("there were:\n\t{0} Bulls\n\t{1} Cows\n\nYou have {2} tries left.\n\n".format(
+            bulls, cows, tries))
         tries -= 1
+
 
 def get_guess():
     guess = list(str(get_Num()))
     return guess
 
+
 def start():
     print("I'm thinking of a 4 digit number, can you guess what it is?"
-            + "\nRules:"
+          + "\nRules:"
             + "\n\tI think of a 4-digit number."
             + "\n\tYou try to guess the number."
             + "\n\tI give you hints about the digits of your guess"
@@ -67,6 +74,7 @@ def start():
             + "\n\nWhat is your first guess?")
 
     game()
+
 
 if __name__ == "__main__":
     start()

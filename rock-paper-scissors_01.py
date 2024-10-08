@@ -11,8 +11,10 @@ print("Winning conditions of ROCK PAPER SCISSORS are:\n"
 player_score = 0
 comp_score = 0
 
+
 def rematch():
-    print("The score is:\n\tYou: {0}\n\tMe:  {1}".format(str(player_score), str(comp_score)))
+    print("The score is:\n\tYou: {0}\n\tMe:  {1}".format(
+        str(player_score), str(comp_score)))
     start = input("Would you like to play again?\n\t: ")
 
     if start.lower() in ['yes', 'y']:
@@ -26,9 +28,10 @@ def rematch():
         print("I need a 'yes', 'y', 'no', or 'n' (not case sensitive)")
         rematch()
 
+
 def comp_choice():
 
-    comp_int = random.randint(1,3)
+    comp_int = random.randint(1, 3)
 
     if comp_int == 1:
         comp_word = 'Rock'
@@ -40,6 +43,7 @@ def comp_choice():
         comp_word = 'Scissors'
 
     return comp_word
+
 
 def player_choice():
 
@@ -59,6 +63,7 @@ def player_choice():
         player_word = 'Rock'
 
     return player_word
+
 
 def match():
 
@@ -109,6 +114,7 @@ def match():
             rematch()
 
     return
+
 
 if __name__ == "__main__":
     match()
