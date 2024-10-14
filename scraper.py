@@ -7,6 +7,8 @@ def getdata(url):
     return r.text
 
 
-htmlData = getdata("https://something.com")
+url = input("Enter URL: ")
+
+htmlData = getdata(url)
 
 soup = BeautifulSoup(htmlData, 'html.parser')
